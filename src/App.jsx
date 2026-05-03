@@ -1,6 +1,8 @@
 // Import React hooks
 import { useState, useEffect, useMemo } from 'react'
 import './App.css'
+import Header from './components/Header'
+import MainContent from './components/MainContent'
 
 function App() {
   // Create state variables
@@ -73,7 +75,8 @@ function App() {
 
   return (
     <main>
-      <h1>Quick Shop</h1>
+      <Header />
+      <MainContent />
     </main>
   )
 }
