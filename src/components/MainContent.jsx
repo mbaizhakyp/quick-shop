@@ -1,9 +1,16 @@
-function MainContent() {
-    return (
-      <main>
-        <h1>Main content</h1>
-      </main>
-    )
-  }
+import ProductGrid from './ProductGrid'
+
+function MainContent({ products, isLoading, error, onAddToCart }) {
+  return (
+    <main>
+      <ProductGrid
+        products={products}
+        isLoading={isLoading}
+        error={error}
+        onAddToCart={onAddToCart}
+      />
+    </main>
+  )
+}
 
   export default MainContent

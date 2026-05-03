@@ -76,7 +76,12 @@ function App() {
   return (
     <main>
       <Header />
-      <MainContent />
+      <MainContent
+        products={filteredProducts}
+        isLoading={isLoading}
+        error={error}
+        onAddToCart={handleAddToCart}
+      />
     </main>
   )
 }
