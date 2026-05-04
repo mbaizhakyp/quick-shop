@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar"
 
 function Header({ searchQuery, onSearchChange }) {
     return (
-      <header>
+      <header className="app-header">
         <h1>Quick Shop</h1>
 
         <SearchBar 

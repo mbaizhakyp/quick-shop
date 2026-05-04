@@ -3,7 +3,7 @@ import SidebarCart from './SidebarCart'
 
 function MainContent({ products, isLoading, error, onAddToCart, cart, cartTotal, onIncrement, onDecrement, onRemove, onRetry }) {
   return (
-    <main>
+    <main className="app-layout">
       <ProductGrid
         products={products}
         isLoading={isLoading}

@@ -3,12 +3,12 @@ import CartTotal from './CartTotal'
 
 function SidebarCart({ cart, cartTotal, onIncrement, onDecrement, onRemove }) {
     return (
-      <aside>
+      <aside className="cart-sidebar">
         <h2>Cart</h2>
         {cart.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p className="empty-cart">Your cart is empty.</p>
         ) : (
-        <>
+        <div className="cart-items">
         {cart.map(item => (
           <CartItem
             key={item.id}
@@ -19,7 +19,7 @@ function SidebarCart({ cart, cartTotal, onIncrement, onDecrement, onRemove }) {
           />
         ))}
         <CartTotal cartTotal={cartTotal} />
-        </>
+        </div>
         )}
       </aside>
     )

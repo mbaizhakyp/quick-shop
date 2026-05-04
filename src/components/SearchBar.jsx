@@ -1,7 +1,7 @@
 function SearchBar({ searchQuery, onSearchChange }) {
     return (
-      <label>
-        Search products
+      <label className="search-bar">
+        <span>Search products</span>
         <input
           type="search"
           value={searchQuery}

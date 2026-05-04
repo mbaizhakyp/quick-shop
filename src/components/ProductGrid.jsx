@@ -2,12 +2,12 @@ import ProductCard from './ProductCard'
 
 function ProductGrid({ products, isLoading, error, onAddToCart, onRetry }) {
   if (isLoading) {
-    return <p>Loading products...</p>
+    return <p className="status-message">Loading products...</p>
   }
 
   if (error) {
     return (
-      <section>
+      <section className="status-panel">
         <p>{error}</p>
         <button onClick={onRetry}>Try again</button>
       </section>
@@ -15,14 +15,14 @@ function ProductGrid({ products, isLoading, error, onAddToCart, onRetry }) {
   }
 
   if (products.length === 0) {
-    return <p>No products found.</p>
+    return <p className="status-message">No products found.</p>
   }
 
   return (
-    <section>
+    <section className="product-section">
       <h2>Products</h2>
 
-      <div>
+      <div className="product-grid">
         {products.map(product => (
           <ProductCard
             key={product.id}

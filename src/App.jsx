@@ -111,7 +111,7 @@ function App() {
   }
 
   return (
-    <main>
+    <main className="app-shell">
       <Header 
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
