@@ -1,7 +1,7 @@
 import ProductGrid from './ProductGrid'
 import SidebarCart from './SidebarCart'
 
-function MainContent({ products, isLoading, error, onAddToCart, cart, cartTotal, onIncrement, onDecrement, onRemove }) {
+function MainContent({ products, isLoading, error, onAddToCart, cart, cartTotal, onIncrement, onDecrement, onRemove, onRetry }) {
   return (
     <main>
       <ProductGrid
@@ -9,6 +9,7 @@ function MainContent({ products, isLoading, error, onAddToCart, cart, cartTotal,
         isLoading={isLoading}
         error={error}
         onAddToCart={onAddToCart}
+        onRetry={onRetry}
       />
       <SidebarCart
         cart={cart}

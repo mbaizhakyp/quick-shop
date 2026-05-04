@@ -126,6 +126,7 @@ function App() {
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
         onRemove={handleRemove}
+        onRetry={fetchProducts}
       />
     </main>
   )
