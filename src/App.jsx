@@ -58,19 +58,56 @@ function App() {
 
   // Add cart handler placeholders
   function handleAddToCart(product) {
-    // Step 6
+    setCart(currentCart => {
+      const existingItem = currentCart.find(item => item.id === product.id)
+
+      if (existingItem) {
+        return currentCart.map(item => 
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      }
+
+      return [
+        ...currentCart,
+        {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          quantity: 1
+        }
+      ]
+    })
   }
 
   function handleIncrement(productID) {
-    // Step 6
+    setCart(currentCart => 
+      currentCart.map(item =>
+        item.id === productID
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    )
   }
 
   function handleDecrement(productID) {
-    // Step 6
+    setCart(currentCart => 
+      currentCart.map(item =>
+        item.id === productID
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter(item => item.quantity > 0)
+    )
   }
 
   function handleRemove(productID) {
-    // Step 6
+    setCart(currentCart => 
+      currentCart.filter(item =>
+        item.id !== productID
+      )
+    )
   }
 
   return (
@@ -80,7 +117,12 @@ function App() {
         products={filteredProducts}
         isLoading={isLoading}
         error={error}
+        cart={cart}
+        cartTotal={cartTotal}
         onAddToCart={handleAddToCart}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onRemove={handleRemove}
       />
     </main>
   )

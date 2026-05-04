@@ -22,7 +22,7 @@ function ProductGrid({ products, isLoading, error, onAddToCart }) {
           <ProductCard
             key={product.id}
             product={product}
-            onAddToCart={() => onAddToCart(product)}
+            onAddToCart={onAddToCart}
           />
         ))}
       </div>
