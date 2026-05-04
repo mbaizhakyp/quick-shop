@@ -1,8 +1,14 @@
-function SearchBar() {
+function SearchBar({ searchQuery, onSearchChange }) {
     return (
-      <section>
-        <h2>Search Bar</h2>
-      </section>
+      <label>
+        Search products
+        <input
+          type="search"
+          value={searchQuery}
+          onChange={event => onSearchChange(event.target.value)}
+          placeholder="Search by title or category"
+          />
+      </label>
     )
   }
 

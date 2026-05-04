@@ -1,7 +1,14 @@
-function Header() {
+import SearchBar from "./SearchBar"
+
+function Header({ searchQuery, onSearchChange }) {
     return (
       <header>
-        <h1>Header</h1>
+        <h1>Quick Shop</h1>
+
+        <SearchBar 
+          searchQuery={searchQuery}
+          onSearchChange={onSearchChange}
+        />
       </header>
     )
   }

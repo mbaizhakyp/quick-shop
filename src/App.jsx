@@ -112,7 +112,10 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <Header 
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+      />
       <MainContent
         products={filteredProducts}
         isLoading={isLoading}
